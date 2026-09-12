@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chakkakku Hockey 🥭🏑 | Every Problem Deserves the Wrong Solution</title>
+  <meta name="description" content="Chakkakku Hockey (ചക്കിന് വെച്ചത് ഹോക്കിക്ക് കൊണ്ടു): The world's most delightfully useless solution generator. Permanent 0% usefulness guaranteed." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <!-- Canvas Confetti CDN with internal fallback in script.js -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <!-- Ambient Floating Emojis Background -->
+  <div class="floating-bg" id="floatingBg" aria-hidden="true"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <span class="nav-emoji">🥭</span>
+        <span class="brand-text">Chakkakku Hockey</span>
+        <span class="badge-mini">0% Useful</span>
+      </div>
+      <div class="nav-actions">
+        <button class="sound-toggle-btn" id="soundToggle" title="Toggle Sound Effects" aria-label="Toggle Sound Effects">
+          <span class="sound-icon" id="soundIcon">🔊</span>
+          <span class="sound-label">Sound On</span>
+        </button>
+        <a href="#solverSection" class="nav-cta-btn">Solve Wrongly</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="hero-container">
+      <div class="hero-badge-pill" id="proverbBadge" title="Click to learn the story!">
+        <span class="pill-dot"></span>
+        <span class="malayalam-text">ചക്കിന് വെച്ചത് ഹോക്കിക്ക് കൊണ്ടു</span>
+        <span class="pill-info-icon">ℹ️</span>
+      </div>
+
+      <div class="mascot-wrapper">
+        <div class="mascot-halo"></div>
+        <img src="assets/mascot.jpg" alt="Chakkakku Hockey Mascot - A happy cartoon Jackfruit in hockey gear" class="mascot-img" id="heroMascot" />
+        <div class="mascot-tag floating-tag">100% Unrelated! 🏑</div>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="title-fruit">🥭 Chakkakku</span>
+        <span class="title-hockey">Hockey 🏑</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        "Every problem deserves the wrong solution."
+      </p>
+
+      <p class="hero-desc">
+        Welcome to the supreme generator of aggressively irrelevant advice. We take your everyday struggles and solve them with the pristine logic of keeping a hockey stick next to a jackfruit.
+      </p>
+
+      <div class="hero-cta-group">
+        <button class="btn-primary btn-bounce" id="startSolvingBtn">
+          <span class="btn-icon">🚀</span>
+          <span>Start Solving Wrongly</span>
+        </button>
+        <button class="btn-secondary" id="randomSurpriseBtn">
+          <span class="btn-icon">🎲</span>
+          <span>Surprise Disaster</span>
+        </button>
+      </div>
+
+      <!-- Live Useless Stats -->
+      <div class="hero-stats-row">
+        <div class="stat-card">
+          <span class="stat-value" id="problemsUnsolvedCount">1,428,913</span>
+          <span class="stat-label">Problems Left Unsolved</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value text-red">0.00%</span>
+          <span class="stat-label">Usefulness Guaranteed</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value text-green">14,200+</span>
+          <span class="stat-label">Jackfruits Consulted</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Generator Section -->
+  <main class="main-content" id="solverSection">
+    <div class="solver-card glass-panel">
+      <div class="solver-card-header">
+        <div class="solver-title-row">
+          <span class="solver-icon">🧠❌</span>
+          <h2>The Grand Useless Solution Engine</h2>
+        </div>
+        <p class="solver-subtitle">Select what ails your soul, and let our zero-iq algorithms misguide you.</p>
+      </div>
+
+      <!-- Problem Selector -->
+      <div class="problem-select-wrapper">
+        <label for="problemSelect" class="problem-label">
+          <span>What is your unfortunate dilemma?</span>
+          <span class="label-hint">Pick wisely or unwisely</span>
+        </label>
+        
+        <div class="select-box-custom">
+          <select id="problemSelect" class="problem-dropdown">
+            <option value="" disabled selected>👉 Choose a problem to ruin...</option>
+            <option value="hungry">🍔 I'm Hungry</option>
+            <option value="sleepy">😴 I'm Sleepy</option>
+            <option value="battery">🔋 My Phone Has No Charge</option>
+            <option value="raining">🌧️ It's Raining</option>
+            <option value="exams">📚 I Have Exams Tomorrow</option>
+            <option value="broke">💸 I'm Broke</option>
+            <option value="rejected">❤️ I Got Rejected</option>
+            <option value="bus">🚌 I Missed My Bus</option>
+            <option value="mosquitoes">🦟 Swarm of Kerala Mosquitoes</option>
+            <option value="bugs">💻 My Code Has 404 Bugs</option>
+            <option value="custom">✍️ I have my own weird problem...</option>
+          </select>
+          <div class="select-chevron">▾</div>
+        </div>
+
+        <!-- Custom Input Container (Hidden by default) -->
+        <div class="custom-problem-box hidden" id="customProblemContainer">
+          <input type="text" id="customProblemInput" class="custom-input" placeholder="e.g. My cat won't stop judging my career choices..." maxlength="100" />
+        </div>
+      </div>
+
+      <!-- Solve Button -->
+      <div class="action-btn-wrapper">
+        <button class="btn-solve" id="solveBtn">
+          <span class="solve-btn-bg"></span>
+          <span class="solve-btn-content">
+            <span class="solve-icon">🏑</span>
+            <span class="solve-text">Solve It Uselessly</span>
+            <span class="solve-sparkle">✨</span>
+          </span>
+        </button>
+      </div>
+
+      <!-- Loading / Thinking Animation Container -->
+      <div class="thinking-box hidden" id="thinkingBox">
+        <div class="jackfruit-spinner">🥭</div>
+        <div class="thinking-text" id="thinkingText">Consulting senior jackfruit council...</div>
+        <div class="progress-bar-ind"><div class="progress-bar-fill"></div></div>
+      </div>
+
+      <!-- Solution Display Container -->
+      <div class="solution-display-card hidden" id="solutionCard">
+        <div class="solution-ribbon">
+          <span class="ribbon-icon">🏆</span>
+          <span class="ribbon-text">OFFICIAL UNHELPFUL ADVICE</span>
+        </div>
+
+        <div class="solution-header-meta">
+          <span class="problem-tag" id="solutionProblemTag">🍔 Hungry Dilemma</span>
+          <span class="irrelevance-rating">Irrelevance: 100% 🔥</span>
+        </div>
+
+        <blockquote class="solution-quote" id="solutionText">
+          "Buy a hockey stick and keep it near a jackfruit. Hunger solved... maybe."
+        </blockquote>
+
+        <div class="solution-meta-details" id="solutionMeta">
+          <div class="meta-pill">
+            <span class="meta-pill-label">Side Effect:</span>
+            <span class="meta-pill-value" id="metaSideEffect">Confusion from neighbors</span>
+          </div>
+          <div class="meta-pill">
+            <span class="meta-pill-label">Estimated Cost:</span>
+            <span class="meta-pill-value" id="metaCost">1 Hockey Stick & 1 Ripe Jackfruit</span>
+          </div>
+          <div class="meta-pill">
+            <span class="meta-pill-label">Time Saved:</span>
+            <span class="meta-pill-value text-red">-42 Minutes</span>
+          </div>
+        </div>
+
+        <!-- Action Buttons inside Solution Card -->
+        <div class="solution-actions">
+          <button class="btn-worse" id="worseIdeaBtn" title="Make this 10x more absurd!">
+            <span class="worse-icon">💥</span>
+            <span>Generate Even Worse Idea</span>
+          </button>
+          
+          <button class="btn-action-small" id="copyAdviceBtn" title="Copy to clipboard">
+            <span id="copyIcon">📋</span>
+            <span id="copyText">Copy Useless Advice</span>
+          </button>
+
+          <button class="btn-action-small" id="shareWhatsAppBtn" title="Share with friends">
+            <span>💬</span>
+            <span>Share</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Usefulness Meter (Permanently 0%) -->
+      <div class="usefulness-meter-container">
+        <div class="meter-header">
+          <div class="meter-title-wrap">
+            <span class="meter-icon">📉</span>
+            <span class="meter-title">Official Usefulness Meter</span>
+          </div>
+          <div class="meter-badge-locked">
+            <span class="lock-icon">🔒</span> PERMANENTLY LOCKED AT 0%
+          </div>
+        </div>
+
+        <div class="gauge-wrapper">
+          <div class="gauge-dial">
+            <div class="gauge-arc"></div>
+            <div class="gauge-ticks">
+              <span class="tick tick-0">0%</span>
+              <span class="tick tick-25">25%</span>
+              <span class="tick tick-50">50%</span>
+              <span class="tick tick-75">75%</span>
+              <span class="tick tick-100">100%</span>
+            </div>
+            <!-- Animated needle vibrating around 0% -->
+            <div class="gauge-needle-center">
+              <div class="gauge-needle" id="gaugeNeedle"></div>
+            </div>
+          </div>
+          <div class="gauge-value-display">
+            <span class="gauge-number" id="gaugeNumber">0.00%</span>
+            <span class="gauge-tagline" id="gaugeTagline">Certified 100% Ineffective. Science is speechless.</span>
+          </div>
+        </div>
+
+        <div class="meter-subgrid">
+          <div class="submetric">
+            <span class="submetric-name">Braincells Expended</span>
+            <span class="submetric-val">0.0001</span>
+          </div>
+          <div class="submetric">
+            <span class="submetric-name">Jackfruit Synergy</span>
+            <span class="submetric-val text-green">99.9% 🥭</span>
+          </div>
+          <div class="submetric">
+            <span class="submetric-name">Practical Value</span>
+            <span class="submetric-val text-red">Below Zero</span>
+          </div>
+          <div class="submetric">
+            <span class="submetric-name">Hockey Stick Alignment</span>
+            <span class="submetric-val text-blue">180° Away</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Badges Section -->
+    <section class="badges-section glass-panel">
+      <div class="section-title-bar">
+        <div class="title-with-badge">
+          <span class="section-icon">🎖️</span>
+          <h2>Hall of Useless Honors</h2>
+        </div>
+        <div class="badge-counter" id="badgeCounter">
+          Unlocked: <span id="unlockedBadgeCount">4</span>/4
+        </div>
+      </div>
+      <p class="section-desc">Click each prestigious badge to celebrate your complete lack of productivity today.</p>
+
+      <div class="badges-grid">
+        <!-- Badge 1 -->
+        <div class="badge-card unlocked" data-badge="jackfruit" id="badge-jackfruit">
+          <div class="badge-inner">
+            <div class="badge-icon-wrap">
+              <span class="badge-emoji">🥭</span>
+              <span class="badge-checkmark">✓</span>
+            </div>
+            <h3 class="badge-name">Jackfruit Expert</h3>
+            <p class="badge-desc">Master of heavy, spiky, and completely irrelevant life choices.</p>
+            <div class="badge-ribbon">Honorary Spiky Fellow</div>
+          </div>
+        </div>
+
+        <!-- Badge 2 -->
+        <div class="badge-card unlocked" data-badge="hockey" id="badge-hockey">
+          <div class="badge-inner">
+            <div class="badge-icon-wrap">
+              <span class="badge-emoji">🏑</span>
+              <span class="badge-checkmark">✓</span>
+            </div>
+            <h3 class="badge-name">Hockey Champion</h3>
+            <p class="badge-desc">Aiming for a traditional oil mill, striking a sports trophy instead.</p>
+            <div class="badge-ribbon">Supreme Missed Goal</div>
+          </div>
+        </div>
+
+        <!-- Badge 3 -->
+        <div class="badge-card unlocked" data-badge="timewaster" id="badge-timewaster">
+          <div class="badge-inner">
+            <div class="badge-icon-wrap">
+              <span class="badge-emoji">🤡</span>
+              <span class="badge-checkmark">✓</span>
+            </div>
+            <h3 class="badge-name">Professional Time Waster</h3>
+            <p class="badge-desc">Could have finished your tasks 3 hours ago. Decided to visit this site instead.</p>
+            <div class="badge-ribbon">Grand Procrastinator</div>
+          </div>
+        </div>
+
+        <!-- Badge 4 -->
+        <div class="badge-card unlocked" data-badge="useless" id="badge-useless">
+          <div class="badge-inner">
+            <div class="badge-icon-wrap">
+              <span class="badge-emoji">💯</span>
+              <span class="badge-checkmark">✓</span>
+            </div>
+            <h3 class="badge-name">Certified Useless</h3>
+            <p class="badge-desc">Tested by ISO 9000-0000 for absolute lack of utility. Flawless zero.</p>
+            <div class="badge-ribbon">Zero Utility Laureate</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Random Useless Fact Generator Section -->
+    <section class="fact-section glass-panel">
+      <div class="fact-card-inner">
+        <div class="fact-badge">
+          <span>🧠</span>
+          <span>COMPLETELY USELESS FACT #<span id="factNumber">42</span></span>
+        </div>
+        
+        <blockquote class="fact-quote" id="factQuote">
+          "Jackfruits don't play professional field hockey primarily due to their severe lack of wrist mobility and absence of sports insurance."
+        </blockquote>
+
+        <div class="fact-footer">
+          <button class="btn-fact" id="newFactBtn">
+            <span class="fact-btn-icon">🎲</span>
+            <span>Enlighten Me With More Nonsense</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mini Interactive Game / Easter Egg: Hit the Jackfruit with Hockey -->
+    <section class="mini-game-section glass-panel">
+      <div class="mini-game-header">
+        <div class="mini-game-title">
+          <span>🕹️</span>
+          <h3>Quick Time Waster: Jackfruit Hockey Tap</h3>
+        </div>
+        <div class="game-score-pill">
+          Score: <span id="gameScore">0</span> (Points are worthless)
+        </div>
+      </div>
+      <p class="game-instructions">Tap the bouncing jackfruit with the hockey stick to waste even more precious seconds.</p>
+      <div class="game-arena" id="gameArena">
+        <button class="target-jackfruit" id="targetJackfruit" aria-label="Tap Jackfruit">
+          🥭
+          <span class="tap-label">TAP!</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Proverb Explainer Modal -->
+  <div class="modal-backdrop hidden" id="proverbModal">
+    <div class="modal-card glass-panel">
+      <button class="modal-close" id="closeModalBtn" aria-label="Close modal">&times;</button>
+      <div class="modal-icon">🥭 🤝 🏑</div>
+      <h3 class="modal-title">What is "ചക്കിന് വെച്ചത് ഹോക്കിക്ക് കൊണ്ടു"?</h3>
+      <div class="modal-body">
+        <p>
+          In Malayalam, the popular proverb goes <strong>"ചക്കിന് വെച്ചത് കൊക്കിന് കൊണ്ടു"</strong> (<em>"What was aimed at the oil-press struck the crane"</em>) — referring to an action whose result was totally unintended and unrelated.
+        </p>
+        <p>
+          <strong>"Chakkakku Hockey"</strong> is the modern absurd twist: <em>Aiming for the oil press, landing a hockey stick instead!</em>
+        </p>
+        <p>
+          Whenever life throws a genuine crisis at you, do not worry: our philosophy is that every sensible problem deserves a hilariously wrong, jackfruit-adjacent non-solution!
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-primary" id="modalUnderstoodBtn">I Understand Nothing (Perfect)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast hidden" id="toastMessage">Copied to clipboard! 🥭</div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-hero-quote">
+        "Congratulations! You successfully solved absolutely nothing."
+      </div>
+      <div class="footer-subtext">
+        Inspired by Kerala folk humor, ripe jackfruits, and completely unrelated sports equipment.
+      </div>
+      <div class="footer-mascot-row">
+        <span>🥭</span>
+        <span class="heart-pulse">❤️</span>
+        <span>🏑</span>
+      </div>
+      <div class="footer-copyright">
+        &copy; 2026 Chakkakku Hockey Enterprises. 0% Utility Guaranteed. No jackfruits were harmed during the making of this nonsense.
+      </div>
+      <div class="footer-actions">
+        <button class="footer-link-btn" id="footerResetBtn">🔄 Reset All Nonsense</button>
+        <button class="footer-link-btn" id="footerProverbBtn">📖 The Proverb Story</button>
+        <a href="#navbar" class="footer-link-btn">⬆️ Back to Top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
